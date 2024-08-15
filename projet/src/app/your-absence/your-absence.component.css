@@ -1,0 +1,34 @@
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+td:hover {
+    background-color: #f1f1f1;
+}
+
+.table-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.table-container table {
+    border-collapse: collapse;
+}
+
+.table-container table:first-child {
+    margin-right: 0;
+}

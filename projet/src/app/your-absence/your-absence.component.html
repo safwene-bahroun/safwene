@@ -1,0 +1,39 @@
+<!-- profile.component.html -->
+<div>
+    <h2>Profile</h2>
+    <h3>Welcome to your account Mr/Md {{profile.nom}} {{profile.prenom}}</h3>
+    <p>CLASS: {{ profile.class }} {{ profile.fields }}</p>
+    <p>CIN: {{ profile.cin }}</p>
+    <p>Email: {{ profile.email }}</p>
+</div>
+
+<!-- Example: Replace static data with actual dynamic data -->
+<div class="table-container">
+    <table border="1" cellpadding="2">
+        <thead>
+            <tr><th>Date</th></tr>
+            <tr><th>8:30--10:00</th></tr>
+            <tr><th>10:00--11:30</th></tr>
+            <tr><th>14:00--15:30</th></tr>
+        </thead>
+    </table>
+    
+    <table border="1" cellpadding="14">
+        <thead>
+            <tr>
+                <th>LUNDI</th>
+                <th>MARDI</th>
+                <th>MERCREDI</th>
+                <th>JEUDI</th>
+                <th>VENDREDI</th>
+                <th>SAMEDI</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--tr *ngFor="let row of absenceData">
+                <td *ngFor="let day of row">{{ day }}</td>
+            </tr-->
+        </tbody>
+    </table>
+</div>
+

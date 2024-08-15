@@ -1,0 +1,21 @@
+<div class="hero-image">
+    <div class="hero-text">
+        <h2 id="welcome">Welcome to our service</h2>
+        <table>
+            <tr>
+                <td>
+                    <input type="email" title="email" class="form-control" [(ngModel)]='email' placeholder="ADRESSE EMAIL" [pattern]="emailpattern" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" class="form-control" title="password" [(ngModel)]='password' placeholder="PASSWORD"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                </td>
+            </tr>
+        </table>
+        <button type="button" (submit)="login()" class="btn btn-outline-success btn-primary">Login</button>
+        <div *ngIf="" class="alert input-group-prepend" role="alert" id ="alert">
+            CHECK YOUR PASSWORD OR YOUR EMAIL PLEASE TRY AGAIN
+          </div>
+    </div>
+</div>
