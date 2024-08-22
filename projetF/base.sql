@@ -6,7 +6,6 @@ DROP TABLE IF EXISTS fields CASCADE;
 DROP TABLE IF EXISTS classes CASCADE;
 DROP TABLE IF EXISTS ouvertures_porte CASCADE;
 
-
 CREATE TABLE classes (
     id SERIAL PRIMARY KEY,
     nom VARCHAR(50) NOT NULL
@@ -19,7 +18,7 @@ CREATE TABLE fields (
 
 CREATE TABLE salles (
     id SERIAL PRIMARY KEY,
-    nom VARCHAR(50) NOT NULL
+    nom VARCHAR(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE etudiant (
@@ -63,12 +62,11 @@ CREATE TABLE absences (
 
 CREATE TABLE ouvertures_porte (
     id SERIAL PRIMARY KEY,
-    carte_rfid VARCHAR(20) NOT NULL,
+    carte_rfid VARCHAR(12) NOT NULL,
     date_ouverture TIMESTAMP NOT NULL,
-    salles_id INTEGER NOT NULL,
-    FOREIGN KEY (salles_id) REFERENCES salles(id)
+    salle_id INTEGER NOT NULL,
+    FOREIGN KEY (salle_id) REFERENCES salles(id)
 );
-
 
 INSERT INTO salles (nom) VALUES 
 ('Salle A'),

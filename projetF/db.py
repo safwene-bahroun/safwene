@@ -20,7 +20,6 @@ def init_db():
     db = get_db()
     try:
         with db.cursor() as cursor:
-            # Make sure 'base.sql' is available in the 'instance' folder
             with current_app.open_resource('base.sql') as f:
                 cursor.execute(f.read().decode('utf-8'))
             db.commit()
@@ -34,5 +33,3 @@ def init_app(app):
     app.teardown_appcontext(close_db)
     with app.app_context():
         init_db()
-
-
